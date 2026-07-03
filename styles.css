@@ -284,15 +284,15 @@ h3 { font-size: 1.25rem; font-weight: 600; }
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  transform: scale(0.12);
-  border-radius: 24px;
-  will-change: transform, border-radius;
+  /* janela inicial do recorte: imagem em tamanho real, só o centro visível */
+  clip-path: inset(41% 44% round 28px);
+  will-change: clip-path;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { height: auto; }
   .reveal-sticky { position: static; height: auto; }
-  .reveal-img { transform: none; border-radius: 0; height: auto; }
+  .reveal-img { clip-path: none; height: auto; }
 }
 
 /* ===== Contato ===== */
