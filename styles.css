@@ -262,6 +262,39 @@ h3 { font-size: 1.25rem; font-weight: 600; }
   border: 3px solid var(--pink-soft);
 }
 
+/* ===== Revelação (pin + zoom no scroll) ===== */
+
+.reveal {
+  /* altura extra = distância de rolagem "presa" enquanto o zoom acontece */
+  height: 300vh;
+}
+
+.reveal-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.reveal-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: scale(0.12);
+  border-radius: 24px;
+  will-change: transform, border-radius;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { height: auto; }
+  .reveal-sticky { position: static; height: auto; }
+  .reveal-img { transform: none; border-radius: 0; height: auto; }
+}
+
 /* ===== Contato ===== */
 
 .contato {
